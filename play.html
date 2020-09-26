@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamster Run</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    #begin-time {
+      height: 25px;
+      width: 40px;
+      background: rgb(6, 245, 6);
+      text-align: center;
+      padding-top: 5px;
+      margin-bottom: 4px;
+    }
+
+    #end-game {
+      display: none;
+    }
+
+    .win {
+      background: rgb(73, 184, 73);
+      display: block;
+    }
+
+    .lose {
+      background: rgb(223, 56, 5);
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="begin-time"></div>
+  </div>
+  <button id="run-button" onclick="addClick()">RUN!</button>
+  <button id="start-game" onclick="startGame()">PLAY!</button>
+  <br><br>
+  <div id="play-time-remaining"></div>
+  <div id="click-count"></div>
+  <div id="power"></div>
+  <div id="end-game"></div>
+
+  <script src="script/game.js"></script>
+</body>
+
+</html>
