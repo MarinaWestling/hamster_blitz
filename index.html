@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Document</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style/main.css">
@@ -13,14 +13,12 @@
 <!--body onload="start()"-->
 <body onload="adjustheight()" onresize="adjustheight()">
   <div id="game">
-    <div id="start" class= 'pt-5 mx-auto text-center'>
-      <br>
-      <button class="p-2 e-w" onclick="startGame()">Start</button>
+    <div id="start" class= 'mx-auto text-center'>
+      <button id="startbtn" class="p-2 e-w" onclick="startGame()">Start</button>
     </div>
 
-    <div id="replay" class= 'pt-5 mx-auto text-center'>
-      <br>
-      <button class="p-2 e-w" onclick="replayGame()">Replay?</button>
+    <div id="replay" class= 'mx-auto text-center'>
+      <button id='replaybtn' class="p-2 e-w" onclick="replayGame()">Replay?</button>
     </div>
   </div>
   <script src="script/main.js"></script>

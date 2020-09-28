@@ -19,13 +19,19 @@ function replayGame(){
 function adjustheight(){
   const th = document.documentElement.clientHeight;
   document.getElementById('game').style.height = `${th}px`;
+  adjustHeight();
 }
 
 function adjustHeight(){
-  const th = document.documentElement.clientHeight;
-  const gh = document.getElementById('box').offsetHeight;
+  const th = document.getElementById('start').offsetHeight;
+  const gh = document.getElementById('startbtn').offsetHeight;
   var lh = th-gh;
   var split = lh/2;
   var adjust = `${split}px`;
-  document.getElementById('box').style.marginTop = adjust;
+  document.getElementById('startbtn').style.marginTop = adjust;
+  console.log("Game box height is "+th);
+  console.log("Button height is " + gh);
+  console.log("Difference is "+lh);
+  console.log(split);
+  console.log(adjust);
 }
