@@ -1,0 +1,19 @@
+body {
+  font-size: 12px; /* Use em for font everywhere else. This is the master size */
+  background-color: lightblue;
+}
+#gameArea {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: darkcyan;
+  width: 100%;
+  height: 100%;
+  /* Max Width has to be set in javascript */
+}
+#hamster {  
+  font-size: 1.5em;  
+  width: 20%;
+  height: 40%;
+  background: red;
+}
