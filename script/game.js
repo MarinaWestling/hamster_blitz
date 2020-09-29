@@ -60,7 +60,11 @@ function startGame() {
   function beginCountDown() {
     if (countDown > 1) {
       countDown--;
-    } else {
+      countDownHUD.classList.add('count-down-fadeout');
+      setTimeout(function(){
+      countDownHUD.style.display = 'none';
+      }, 3000);
+    }else {      
       countDown = 'GO!';
       clearInterval(beginSeconds); // Stop firing beginCountDown      
 

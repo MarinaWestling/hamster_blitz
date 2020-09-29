@@ -2,17 +2,17 @@ const startModal = document.getElementById('start');
 const replayModal = document.getElementById('replay');
 
 function hideStartMenu() {
-  // Hide start screen modal
-  startModal.style.display = 'none';
+  startModal.classList.add('start-fadeout');
+  setTimeout(function(){
+    startModal.style.display = 'none';
+  }, 1500);
 }
 
 function hideReplayMenu() {
-  // Hide start screen modal
   replayModal.style.display = 'none';
 }
 
-function adjustHeight(){
- 
+function adjustHeight(){ 
   const th = document.getElementById('start').offsetHeight;
   const gh = document.getElementById('startbtn').offsetHeight;
   const titleHeight = document.getElementById('title').offsetHeight;
@@ -23,7 +23,7 @@ function adjustHeight(){
   var split = (lh/2)-titleHeight;
   var adjust = `${split}px`;
   document.getElementById('startbtn').style.marginTop = adjust;
-  console.log(th, gh, lh, titleHeight, split);
+  // console.log(th, gh, lh, titleHeight, split);
 
   //adjust replay height
   var divide = lh/2-statHeight;

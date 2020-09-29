@@ -9,3 +9,17 @@
     display: none;
   }
   
+  .title-name{
+    width: 70%;
+    padding-top: 7%;
+    z-index: 100;
+  }
+
+  .start-fadeout {
+    animation: fadeOut 1.5s forwards;
+  }
+
+  @keyframes fadeOut {
+    0% {opacity: 100%;}
+    100% {opacity: 0%;}
+  }

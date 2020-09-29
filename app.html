@@ -15,19 +15,23 @@
   background of body
   <div id="gameArea">
     <!-- OverLay Menus -->
-    <div id="start" class= 'mx-auto text-center'>
+    <div id="start" class="mx-auto text-center">
       <div id ="title" class="title-name text-center mx-auto"><img src="img/title.svg" alt="Hamster Blitz"></div>
       <button id="startbtn" class="p-2 w-30" onclick="startGame(), hideStartMenu()">Start</button>
     </div>
-    <div id="replay" class= 'mx-auto text-center'>
+    <div id="replay" class="mx-auto text-center">
       <div id = 'stats'></div>
       <button id='replaybtn' class="p-2 w-30" onclick="startGame(), hideReplayMenu()">Replay?</button>
     </div>
-    <!-- Main Container -->
-    <div class="container w-100 h-100">
-      <div id="count-down"></div>
-      <button id="run-button" onclick="addClick()">RUN!</button>
-      <br>    
+
+    <!-- Count Down Overlay -->    
+    <div id="count-down" class=""></div>
+    
+    
+
+    <!-- Main Grid Container -->
+    <div class="grid-container w-100 h-100">      
+      <button id="run-button" onclick="addClick()">RUN!</button>    
       <div id="play-time-remaining"></div>
       <div id="click-count"></div>
       <div id="power"></div>
