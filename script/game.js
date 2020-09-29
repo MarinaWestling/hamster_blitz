@@ -36,13 +36,16 @@ function startGame() {
 
   // Reset countDown, playTimeRemaining, Clicks, Power, powerArray, Points
   countDown = 3;
+  countDownHUD.classList.remove('count-down-fadeout');
+  countDownHUD.style.display = 'block';
   playTimeRemaining = 8;
   clicksTotal = 0;
   clicksPower = 0;
   power = 0;  
   powerArray = new Array();
   basePoints = 0;
-  bonusPoints = 0;  
+  bonusPoints = 0;
+  console.clear();  
 
   // Initialize Game HUD (Updated using code elsewhere)
   countDownHUD.textContent = countDown;    
@@ -59,12 +62,14 @@ function startGame() {
 
   function beginCountDown() {
     if (countDown > 1) {
-      countDown--;
+      countDown--;      
+    }else {
+      // CountDown Go Fadeout
+      runButton.style.zIndex = 101;
       countDownHUD.classList.add('count-down-fadeout');
       setTimeout(function(){
       countDownHUD.style.display = 'none';
-      }, 3000);
-    }else {      
+      }, 1000);      
       countDown = 'GO!';
       clearInterval(beginSeconds); // Stop firing beginCountDown      
 
@@ -88,6 +93,7 @@ function startGame() {
           
           // Disable Run Button, Display Replay Button
           runButton.disabled = true;
+          runButton.style.zIndex = 90;
           replayModal.style.display = 'block';
 
           // Calculate Points
