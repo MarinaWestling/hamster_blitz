@@ -49,6 +49,7 @@
   height: 100%;
   padding-top: 15%;
   display: block;
+  color: white;
 }
 .count-down-fadeout {
   animation: countDownFadeOut 1s forwards;
@@ -92,15 +93,7 @@
 
   background-color: rgb(192, 62, 30);
   border-radius: 0.2em;
-}
-
-.power-fill-animation {
-  animation: 0.5s meterAdjust forwards;
-  animation-iteration-count: 12;
-}
-@keyframes meterAdjust {
-  0% {height: var(--pow0);}
-  100% {height: var(--pow1);}
+  transition: height 0.5s;
 }
 
 #run-button {

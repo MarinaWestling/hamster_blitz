@@ -6,11 +6,7 @@ const runButton = document.getElementById('run-button');
 const endGame = document.getElementById('end-game');
 const clickCountHUD = document.querySelector('#click-count');
 const playTimeHUD = document.querySelector('#play-time-remaining');
-const powerHUD = document.querySelector('#power');
-const root = document.querySelector(':root');
-const rootStyles = getComputedStyle(root);
-
-
+const powerHUD = document.getElementById('power-fill');
 
 // Global variables
 let clicksTotal;
@@ -25,30 +21,11 @@ let totalPoints;
 let winPoints;
 let bonusMinPower;
 let bonusPointsMultiplier;
-let pow0;
-let pow1;
-
-
 
 // Difficulty Settings
 winPoints = 300; // Number between 100 and 1000
 bonusMinPower = 30; //Number between 20 & 80
 bonusPointsMultiplier = 0.5; //Number between 0.1 and 1
-
-
-// Set
-// root.style.setProperty('--pow0', '10%');
-// root.style.setProperty('--pow1', '50%');
-// pow0 = rootStyles.getPropertyValue('--pow0');
-// pow1 = rootStyles.getPropertyValue('--pow1');
-// console.log(pow0,pow1);
-
-// During Development
-//Enable run button
-// runButton.disabled = false;
-// document.getElementById('power-fill').classList.add('power-fill-animation');
-
-
 
 // Default Conditions
 runButton.disabled = true;
@@ -56,7 +33,7 @@ runButton.disabled = true;
 // Start New Game || Restart
 function startGame() {
   // START CONDITIONS
-  document.getElementById('power-fill').classList.add('power-fill-animation');
+  
   // Reset countDown, playTimeRemaining, Clicks, Power, powerArray, Points
   countDown = 3;
   countDownHUD.classList.remove('count-down-fadeout');
@@ -68,17 +45,13 @@ function startGame() {
   powerArray = new Array();
   basePoints = 0;
   bonusPoints = 0;
-  root.style.setProperty('--pow0', '0%');
-  root.style.setProperty('--pow1', '0%');
-  pow0 = rootStyles.getPropertyValue('--pow0');
-  pow1 = rootStyles.getPropertyValue('--pow1');
+  
   console.clear();  
 
   // Initialize Game HUD (Updated using code elsewhere)
   countDownHUD.textContent = countDown;    
   playTimeHUD.textContent = `Play Time Remaining: ${playTimeRemaining}`;
-  clickCountHUD.textContent = `Distance: ${clicksTotal}cm`;  
-  // powerHUD.textContent = `Power: ${power}W`;
+  clickCountHUD.textContent = `Distance: ${clicksTotal}cm`;
 
   // Hide Win or Lose Condition
   endGame.style.display = 'none';
@@ -118,10 +91,11 @@ function startGame() {
           clearInterval(seconds);
           clearInterval(powerInterval);
           
-          // Disable Run Button, Display Replay Button
+          // Disable Run Button, Display Replay Button, power Meter to 0
           runButton.disabled = true;
           runButton.style.zIndex = 90;
           replayModal.style.display = 'block';
+          powerHUD.style.height = '0%';
 
           // Calculate Points
 
@@ -209,17 +183,8 @@ function addClick() {
 // Power Meter - Called every half second until game end
 // Power, Update Display, Track powerArray for Points
 function powerNow() {
-  power = clicksPower * 10;
-  pow1 = power;
-  root.style.setProperty('--pow1', pow1+'%');
-  pow1 = rootStyles.getPropertyValue('--pow1');
-  console.log(`Pow0: ${pow0}, Pow1: ${pow1}`);
-  //Animate
-  document.getElementById('power-fill').classList.add('power-fill-animation');  
-    pow0 = pow1;
-    root.style.setProperty('--pow0', pow0+'%');
-    // document.getElementById('power-fill').classList.remove('power-fill-animation');
-    powerArray.push(power);
-    clicksPower = 0;
-    
+  power = clicksPower * 10;  
+  powerHUD.style.height = `${power}%`;      
+  powerArray.push(power);
+  clicksPower = 0;    
 }
