@@ -8,34 +8,30 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="style/main.css">
   <link rel="stylesheet" href="style/resize.css">
-  <link rel="stylesheet" href="style/start.css">
-  
+  <link rel="stylesheet" href="style/start.css">  
 </head>
 
 <body onresize="adjustHeight()">
-  <!-- <body> -->
   background of body
   <div id="gameArea">
+    <!-- OverLay Menus -->
     <div id="start" class= 'mx-auto text-center'>
       <button id="startbtn" class="p-2 w-30" onclick="startGame(), hideStartMenu()">Start</button>
     </div>
     <div id="replay" class= 'mx-auto text-center'>
       <button id='replaybtn' class="p-2 w-30" onclick="startGame(), hideReplayMenu()">Replay?</button>
     </div>
-
-    <div class="container">
+    <!-- Main Container -->
+    <div class="container w-100 h-100">
       <div id="count-down"></div>
-    </div>
-    <button id="run-button" onclick="addClick()">RUN!</button>
-    <!-- <button id="start-game" onclick="startGame()">PLAY!</button> -->
-    <br><br>
-    <div id="play-time-remaining"></div>
-    <div id="click-count"></div>
-    <div id="power"></div>
-    <div id="end-game"></div>
-        
-    <div>gameArea</div>
-    <div id="hamster">hamster</div>    
+      <button id="run-button" onclick="addClick()">RUN!</button>
+      <br>    
+      <div id="play-time-remaining"></div>
+      <div id="click-count"></div>
+      <div id="power"></div>
+      <div id="end-game"></div>
+      <div id="hamster">hamster</div> 
+    </div>       
   </div>
 
   <script src="script/resize.js"></script>

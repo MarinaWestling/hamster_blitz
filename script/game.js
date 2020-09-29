@@ -27,8 +27,6 @@ const clickCountHUD = document.querySelector('#click-count');
 const playTimeHUD = document.querySelector('#play-time-remaining');
 const powerHUD = document.querySelector('#power');
 
-
-
 // Default Conditions
 runButton.disabled = true;
 
