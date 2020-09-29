@@ -7,12 +7,6 @@ function replayGame(){
   modal.style.display = 'block';
 }
 
-function adjustheight(){
-  const th = document.documentElement.clientHeight;
-  document.getElementById('game').style.height = `${th}px`;
-  adjustHeight();
-}
-
 function adjustHeight(){
   const th = document.getElementById('start').offsetHeight;
   const gh = document.getElementById('startbtn').offsetHeight;
@@ -23,3 +17,6 @@ function adjustHeight(){
 }
 
 adjustHeight();
+window.addEventListener('resize', adjustHeight);
+window.addEventListener('orientationchange', adjustHeight);
+
