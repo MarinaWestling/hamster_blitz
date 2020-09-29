@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Grid</title>
+  <link rel="stylesheet" href="style/grid_practice.css">
+  <style>
+    /* .wrapper{
+      display: grid;
+      grid-template-columns: 70% 30%;
+      column-gap: 1em;
+      row-gap: 1em; 
+      gap: 1em;
+    }*/
+    .wrapper{
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-auto-rows: minmax(100px, auto);
+      gap: 1em;
+      /* Horizontal Alignment of boxes in fractional space (Only fills to the size of the content)*/
+      /* justify-items: start; */
+      /* justify-items: center; */
+      /* justify-items: end; */
+      /* justify-items: stretch; default */
+
+      /* Vertical Alignment of boxes in fractional space*/
+      /* align-items: start;
+      align-items: center;
+      align-items: end;
+      align-items: stretch; default */
+      
+
+
+      /* grid-template-columns: 1fr 2fr 1fr; */
+      /* grid-template-columns: repeat(3, 1fr);  Three times, 1fr each */
+      /* grid-template-columns: repeat(4, 1fr 2fr); Four times, 1fr 2fr each */
+      /* gap: 1em; */
+      /* grid-auto-rows: 100px; Will spill over if too much content*/
+      /* grid-auto-rows: minmax(100px, auto); */
+    }
+
+    /* .box1 {
+      align-self: start;
+      grid-column: 1/3;
+      grid-row: 1/3;
+    }
+    .box2 {
+      align-self: end;
+      grid-column: 3/4;
+      grid-row: 1/3;
+    }
+    .box3 {
+      justify-self: end;
+      grid-column: 2/4;
+      grid-row: 3/4;
+    }
+    .box4 {
+      justify-self: center;
+      Overlap Elements too
+      grid-column: 1;
+      grid-row: 2/4;
+    }
+    .box5 {
+      grid-column: span 2;
+      grid-row: 4/5;
+    } */
+
+
+
+    /* .nested{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 70px;
+      gap: 1em;
+    }
+
+    .nested > div{
+      border: 1px solid black;
+      padding: 1em;
+    } */
+
+    .wrapper > div{
+      background-color: lightgray;
+      padding: 1em;
+    }
+    .wrapper > div:nth-child(odd){
+      background-color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="wrapper">
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos pariatur commodi, itaque distinctio atque nobis consequuntur in ad ratione repellendus modi alias nisi consequatur eos sed tempora. Veniam, neque beatae.</div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore dolore at ex nobis recusandae nam excepturi mollitia adipisci perferendis, hic delectus illo deleniti amet nostrum. Facilis omnis amet doloribus rerum eius magni laudantium deserunt dignissimos, ducimus odio dolores vel quod?</div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore dolore at ex nobis recusandae nam excepturi mollitia adipisci perferendis, hic delectus illo deleniti amet nostrum. Facilis omnis amet doloribus rerum eius magni laudantium deserunt dignissimos, ducimus odio dolores vel quod?</div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore dolore at ex nobis recusandae nam excepturi mollitia adipisci perferendis, hic delectus illo deleniti amet nostrum. Facilis omnis amet doloribus rerum eius magni laudantium deserunt dignissimos, ducimus odio dolores vel quod?</div>
+  </div> -->
+  <!-- <div class="wrapper">
+    <div>Lorem ipsum dolor sit.</div>
+    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam perferendis maiores similique nobis reprehenderit eligendi natus enim quod, est tenetur nesciunt optio! Commodi neque optio sapiente non quae facere veniam laborum, ullam provident consequatur iste nam aliquam reprehenderit fugit debitis?</div>
+    <div class="nested">
+      <div>Lorem</div>
+      <div>Lorem</div>
+      <div>Lorem</div>
+      <div>Lorem</div>
+      <div>Lorem</div>
+      <div>Lorem</div>
+      <div>Lorem</div>
+      <div>Lorem</div>
+      <div>Lorem</div>
+    </div>
+    <div>Lorem ipsum dolor sit.</div>
+    <div>Lorem ipsum dolor sit.</div>
+    <div>Lorem ipsum dolor sit.</div>
+    <div>Lorem ipsum dolor sit.</div>
+    <div>Lorem ipsum dolor sit.</div>
+    <div>Lorem ipsum dolor sit.</div>
+    <div>Lorem ipsum dolor sit.</div>
+    <div>Lorem ipsum dolor sit.</div>
+  </div> -->
+  <div class="wrapper">
+    <div class="box box1">Box1</div>
+    <div class="box box2">Box2</div>
+    <div class="box box3">Box3</div>
+    <div class="box box4">Box4</div>
+    <div class="box box5">Box5</div>
+  </div>
+
+</body>
+</html>
