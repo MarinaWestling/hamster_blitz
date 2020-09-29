@@ -1,8 +1,16 @@
+/* Hide ovelay during UI development */
+/* #start {
+  display: none;
+} */
+
+
+
 *, body {
   padding: 0;
   margin: 0;
   font-family: "Lucida Console", Courier, monospace;
 }
+
 
 .w-30{
   width: 30%;
@@ -26,10 +34,10 @@
 }
 
 .grid-container > div:nth-child(odd) {
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
 }
 .grid-container > div {
-  background-color: coral;
+  /* background-color: coral; */
 }
 
 #count-down {  
@@ -42,12 +50,72 @@
   padding-top: 15%;
   display: block;
 }
-
 .count-down-fadeout {
   animation: countDownFadeOut 1s forwards;
 }
-
 @keyframes countDownFadeOut {
   0% {opacity: 100%;}
   100% {opacity: 0%;}
+}
+
+#hamster {
+  position: absolute;
+  top: 39%;
+  right: 16.5%;
+  width: 17%;
+}
+
+#power-meter {
+  position: absolute;
+  top: 2%;  
+  right: 1.5%;
+  height: 68%;
+  width: 9%;
+
+  border: 0.3em solid rgb(22, 22, 22);
+  border-radius: 0.5em;
+  background-color: white;
+}
+/* Power fill at time = 0 and time = current or 1 */
+:root {
+  --pow0: 0%;
+  --pow1: 0%;
+}
+#power-fill {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: -0.05em;
+  left: -0.05em;
+  right: -0.05em;
+  height: 0%;
+
+  background-color: rgb(192, 62, 30);
+  border-radius: 0.2em;
+}
+
+.power-fill-animation {
+  animation: 0.5s meterAdjust forwards;
+  animation-iteration-count: 12;
+}
+@keyframes meterAdjust {
+  0% {height: var(--pow0);}
+  100% {height: var(--pow1);}
+}
+
+#run-button {
+  position: absolute;
+  /* bottom: 0.6%; */
+  bottom: 1%;
+  /* right: 3%; */
+  right: 4%;
+  width: 45%;
+  /* height: 24%; */  
+
+  padding-left: 0.5em;
+  border: 0.1em solid black;
+  border-radius: 0.2em;
+  font-size: 2.5em;
+  background-color: rgb(156, 250, 33);
+
 }
