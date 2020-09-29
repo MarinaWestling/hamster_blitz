@@ -17,17 +17,17 @@
   background of body
   <div id="gameArea">
     <div id="start" class= 'mx-auto text-center'>
-      <button id="startbtn" class="p-2 w-30" onclick="startGame()">Start</button>
+      <button id="startbtn" class="p-2 w-30" onclick="startGame(), hideStartMenu()">Start</button>
     </div>
     <div id="replay" class= 'mx-auto text-center'>
-      <button id='replaybtn' class="p-2 w-30" onclick="replayGame()">Replay?</button>
+      <button id='replaybtn' class="p-2 w-30" onclick="startGame(), hideReplayMenu()">Replay?</button>
     </div>
 
     <div class="container">
       <div id="count-down"></div>
     </div>
     <button id="run-button" onclick="addClick()">RUN!</button>
-    <button id="start-game" onclick="startGame()">PLAY!</button>
+    <!-- <button id="start-game" onclick="startGame()">PLAY!</button> -->
     <br><br>
     <div id="play-time-remaining"></div>
     <div id="click-count"></div>
@@ -40,7 +40,7 @@
 
   <script src="script/resize.js"></script>
   <script src="script/start.js"></script>
-  <script src="game.js"></script>
+  <script src="script/game.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -1,10 +1,14 @@
-function startGame(){
-  const modal = document.getElementById('start');
-  modal.style.display = 'none';
+const startModal = document.getElementById('start');
+const replayModal = document.getElementById('replay');
+
+function hideStartMenu() {
+  // Hide start screen modal
+  startModal.style.display = 'none';
 }
-function replayGame(){
-  const modal = document.getElementById('replay');
-  modal.style.display = 'block';
+
+function hideReplayMenu() {
+  // Hide start screen modal
+  replayModal.style.display = 'none';
 }
 
 function adjustHeight(){

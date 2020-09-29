@@ -22,15 +22,15 @@ bonusPointsMultiplier = 0.5; //Number between 0.1 and 1
 // DOM Elements
 const countDownHUD = document.getElementById('count-down');
 const runButton = document.getElementById('run-button');
-const startGameButton = document.getElementById('start-game');
 const endGame = document.getElementById('end-game');
 const clickCountHUD = document.querySelector('#click-count');
 const playTimeHUD = document.querySelector('#play-time-remaining');
 const powerHUD = document.querySelector('#power');
 
+
+
 // Default Conditions
 runButton.disabled = true;
-startGameButton.style.display = 'inline-block';
 
 // Start New Game || Restart
 function startGame() {
@@ -52,10 +52,9 @@ function startGame() {
   clickCountHUD.textContent = `Distance: ${clicksTotal}cm`;  
   powerHUD.textContent = `Power: ${power}W`;
 
-  // Hide Win or Lose Condition, Remove Play Button
+  // Hide Win or Lose Condition
   endGame.style.display = 'none';
   endGame.className = '';
-  startGameButton.style.display = 'none';
 
   // Countdown to Start -  fire beginCountDown every second
   const beginSeconds = setInterval(beginCountDown, 1000);  
@@ -85,10 +84,9 @@ function startGame() {
           clearInterval(seconds);
           clearInterval(powerInterval);
           
-          // Disable Run Button, Display Restart Button
+          // Disable Run Button, Display Replay Button
           runButton.disabled = true;
-          startGameButton.textContent = 'PLAY AGAIN';
-          startGameButton.style.display = 'inline-block';
+          replayModal.style.display = 'block';
 
           // Calculate Points
 
