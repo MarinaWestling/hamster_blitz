@@ -14,8 +14,9 @@ function hideReplayMenu() {
 function adjustHeight(){
   const th = document.getElementById('start').offsetHeight;
   const gh = document.getElementById('startbtn').offsetHeight;
+  const titleHeight = document.getElementById('title').offsetHeight;
   var lh = th-gh;
-  var split = lh/2;
+  var split = (lh/2)-titleHeight;
   var adjust = `${split}px`;
   document.getElementById('startbtn').style.marginTop = adjust;
 }
