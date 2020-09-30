@@ -6,19 +6,19 @@
   <title>Hamster Blitz</title>
   <meta name="description" content="Hamster Blitz - Help Burst escape by clicking your way to victory! Do you have the stamina to outrun the bomb?">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style/main.css">
   <link rel="stylesheet" href="style/resize.css">
   <link rel="stylesheet" href="style/start.css">  
 </head>
 
 <body onresize="adjustHeight()">
-  background of body
   <div id="gameArea">
-
     <!-- OverLay Menus -->
     <div id="start" class="mx-auto text-center">
       <div id ="title" class="title-name text-center mx-auto"><img src="img/title.svg" alt="Hamster Blitz"></div>
-      <button id="startbtn" class="p-2 w-30" onclick="startGame(), hideStartMenu(), openFullscreen()">Start</button>
+      <button id="startbtn" class="p-2 w-30" onclick="startGame(), hideStartMenu()">Start</button>
+      <div id="full-screen"><i class="fas fa-2x fa-expand"></i></div>
     </div>
     <div id="replay" class="mx-auto text-center">
       <div id = 'stats'></div>
@@ -34,19 +34,17 @@
     <div id="hamster"><img src="img/hamster-cropped.svg" alt="hamster"></div>
     <button id="run-button" onclick="addClick()">RUN!</button> 
     <!-- Main Grid Container -->
-    <div class="grid-container w-100 h-100">    
-         
+    <div class="grid-container w-100 h-100">         
       <div id="play-time-remaining"></div>
-      <div id="click-count"></div>
-      
-      <div id="end-game"></div>
-       
+      <div id="click-count"></div>      
+      <div id="end-game"></div>       
     </div>       
   </div>
 
   <script src="script/resize.js"></script>
   <script src="script/start.js"></script>
   <script src="script/game.js"></script>
+  <script src="https://kit.fontawesome.com/6b0b6e5fa1.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -23,3 +23,15 @@
     0% {opacity: 100%;}
     100% {opacity: 0%;}
   }
+
+  #full-screen {
+    /* font-size: 1em; */
+    color: white;
+    /* background-color: white; */
+    position: absolute;
+    z-index: 100;
+    bottom: 0.4em;
+    right: 0.4em;
+    height: 2em;
+    width: 2em;
+  }

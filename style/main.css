@@ -8,7 +8,10 @@
 *, body {
   padding: 0;
   margin: 0;
-  font-family: "Lucida Console", Courier, monospace;
+  font-family: "Lucida Console", Courier, monospace;  
+}
+body {
+  background-color: black;
 }
 
 
@@ -31,13 +34,6 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-}
-
-.grid-container > div:nth-child(odd) {
-  /* background-color: antiquewhite; */
-}
-.grid-container > div {
-  /* background-color: coral; */
 }
 
 #count-down {  

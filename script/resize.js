@@ -34,9 +34,11 @@ resizeGame();  // Eliminates extra 17px on initial desktop load
 window.addEventListener('resize', resizeGame, false);
 window.addEventListener('orientationchange', resizeGame, false);
 
+
 // Full Screen
-const elem = document.querySelector('body');
-// openFullscreen();
+const elem = document.documentElement;
+let fullScreenI = 0;
+// Open
 function openFullscreen() {
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
@@ -47,5 +49,39 @@ function openFullscreen() {
   } else if (elem.msRequestFullscreen) { /* IE/Edge */
     elem.msRequestFullscreen();
   }
+  fullScreenI = 1;
 }
 
+// Close
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) { /* Firefox */
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE/Edge */
+    document.msExitFullscreen();
+  }
+  fullScreenI = 0;
+}
+
+const fullScreenButton = document.querySelector('#full-screen');
+fullScreenButton.addEventListener('click', toggleFullScreen);
+
+// isFullscreen();
+// function isFullscreen(){ return 1 >= outerHeight - innerHeight };
+
+
+
+function toggleFullScreen() {
+  if(fullScreenI === 0) {
+    openFullscreen();
+    fullScreenButton.children[0].classList.remove('fa-expand');
+    fullScreenButton.children[0].classList.add('fa-compress');
+  }else if(fullScreenI === 1) {
+    closeFullscreen();
+    fullScreenButton.children[0].classList.remove('fa-compress');
+    fullScreenButton.children[0].classList.add('fa-expand');
+  }
+}
