@@ -1,8 +1,7 @@
 /* Hide ovelay during UI development */
-/* #start {
-  display: none;
-} */
-
+#start {
+  /* display: none; */
+}
 
 
 *, body {
@@ -62,21 +61,54 @@ body {
   width: 17%;
 }
 
+#power-meter-body {
+  position: absolute;
+  top: 2%;
+  right: 0.75%;
+  height: 68%;
+  width: 10%;
+  border: 0.20em solid rgb(22, 22, 22);
+  border-radius: 0.5em;
+  background-color: lightslategray;
+}
+
+.meter-scale {
+  position: absolute;
+  right: 1.55em;
+  font-size: 0.8em;
+}
+#meter0{
+  bottom: -0.8em;
+}
+#meter1{
+  bottom: 2.5em;
+}
+#meter2{
+  bottom: 5.8em;
+}
+#meter3{
+  bottom: 9em;
+}
+#meter4{
+  bottom: 12.1em;
+}
+#meter-title {
+  position: absolute;
+  font-weight: 900;
+  font-size: 1em;
+  top: -0.2em;
+  left: 0.2em;
+}
 #power-meter {
   position: absolute;
-  top: 2%;  
+  top: 9%;  
   right: 1.5%;
-  height: 68%;
-  width: 9%;
+  height: 58%;
+  width: 4%;
 
-  border: 0.3em solid rgb(22, 22, 22);
-  border-radius: 0.5em;
+  border: 0.20em solid rgb(22, 22, 22);
+  border-radius: 0.3em;
   background-color: white;
-}
-/* Power fill at time = 0 and time = current or 1 */
-:root {
-  --pow0: 0%;
-  --pow1: 0%;
 }
 #power-fill {
   margin: 0;
@@ -88,7 +120,7 @@ body {
   height: 0%;
 
   background-color: rgb(192, 62, 30);
-  border-radius: 0.2em;
+  border-radius: 0.15em;
   transition: height 0.5s;
 }
 

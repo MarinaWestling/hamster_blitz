@@ -7,6 +7,11 @@ const endGame = document.getElementById('end-game');
 const clickCountHUD = document.querySelector('#click-count');
 const playTimeHUD = document.querySelector('#play-time-remaining');
 const powerHUD = document.getElementById('power-fill');
+const meter0 = document.getElementById('meter0');
+const meter1 = document.getElementById('meter1');
+const meter2 = document.getElementById('meter2');
+const meter3 = document.getElementById('meter3');
+const meter4 = document.getElementById('meter4');
 
 // Global variables
 let clicksTotal;
@@ -21,11 +26,21 @@ let totalPoints;
 let winPoints;
 let bonusMinPower;
 let bonusPointsMultiplier;
+let meterScale;
+let heightScaled;
 
 // Difficulty Settings
 winPoints = 300; // Number between 100 and 1000
-bonusMinPower = 30; //Number between 20 & 80
+bonusMinPower = 40; //Number between 20 & 80
 bonusPointsMultiplier = 0.5; //Number between 0.1 and 1
+
+// Power Meter Scale
+meterScale = [0, 0.5 * bonusMinPower, bonusMinPower, 1.5 * bonusMinPower, 2 * bonusMinPower];
+meter0.textContent = meterScale[0];
+meter1.textContent = meterScale[1];
+meter2.textContent = meterScale[2];
+meter3.textContent = meterScale[3];
+meter4.textContent = meterScale[4];
 
 // Default Conditions
 runButton.disabled = true;
@@ -52,6 +67,11 @@ function startGame() {
   countDownHUD.textContent = countDown;    
   playTimeHUD.textContent = `Play Time Remaining: ${playTimeRemaining}`;
   clickCountHUD.textContent = `Distance: ${clicksTotal}cm`;
+  heightScaled = (power) / (0.02 * bonusMinPower);
+  if (heightScaled >= 100) {
+    heightScaled = 101;
+  }
+  powerHUD.style.height = `${heightScaled}%`;
 
   // Hide Win or Lose Condition
   endGame.style.display = 'none';
@@ -183,8 +203,12 @@ function addClick() {
 // Power Meter - Called every half second until game end
 // Power, Update Display, Track powerArray for Points
 function powerNow() {
-  power = clicksPower * 10;  
-  powerHUD.style.height = `${power}%`;      
+  power = clicksPower * 10;  //what power is
+  heightScaled = (power) / (0.02 * bonusMinPower);
+  if (heightScaled >= 100) {
+    heightScaled = 101;
+  }
+  powerHUD.style.height = `${heightScaled}%`;
   powerArray.push(power);
   clicksPower = 0;    
 }

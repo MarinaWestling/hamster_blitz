@@ -72,8 +72,6 @@ fullScreenButton.addEventListener('click', toggleFullScreen);
 // isFullscreen();
 // function isFullscreen(){ return 1 >= outerHeight - innerHeight };
 
-
-
 function toggleFullScreen() {
   if(fullScreenI === 0) {
     openFullscreen();
