@@ -21,8 +21,27 @@
       <div id="full-screen"><i class="fas fa-2x fa-expand"></i></div>
     </div>
     <div id="replay" class="mx-auto text-center">
-      <div id = 'stats'></div>
+      <div id='stats'></div>
       <button id='replaybtn' class="p-2 w-30" onclick="startGame(), hideReplayMenu()">Replay?</button>
+    </div>
+
+    <!-- Level Menus -->
+    <!-- Success Menu -->
+    <div id="level-success" class="mx-auto text-center text-white level-menu">
+      <div class="overlay-font">SUCCESS!</div>
+      <div class="overlay-font">Burst Generated</div>
+      <div class="overlay-font"><span id="level-score">80</span>Wh</div>
+      <button class="w-50" id="continue-button">Continue <i class="fas fa-arrow-right"></i></button>
+    </div>    
+    <!-- Failure Menu -->
+    <div id="level-failure" class="mx-auto text-center text-white level-menu">
+      <div class="overlay-font">FAILURE!</div>
+      <div class="overlay-font">Burst Generated</div>
+      <div class="overlay-font"><span id="level-score">80</span>Wh</div>
+      <div id="failure-button-container" class="">                 
+        <button class="" id="main-menu-button">Main Menu <i class="fas fa-home"></i></button>          
+        <button class="" id="main-menu-button">Restart <i class="fas fa-undo"></i></button>        
+      </div>      
     </div>
 
     <!-- Count Down Overlay -->    

@@ -1,5 +1,11 @@
 /* Hide ovelay during UI development */
 #start {
+  display: none;
+}
+#level-success {
+  display: none;
+}
+#level-failure {
   /* display: none; */
 }
 
